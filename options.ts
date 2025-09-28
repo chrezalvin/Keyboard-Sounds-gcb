@@ -1,5 +1,5 @@
-const soundPicker = document.getElementById("soundPicker");
-const uploadInput = document.getElementById("upload");
+const soundPicker = document.getElementById("soundPicker") as HTMLSelectElement;
+const uploadInput = document.getElementById("upload") as HTMLInputElement;
 
 function populatePicker(customSounds, selectedSoundId) {
   soundPicker.innerHTML = "";
