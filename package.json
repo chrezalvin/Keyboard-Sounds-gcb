@@ -4,12 +4,17 @@
   "description": "Just a simple extension to add sound on your keyboard key presses",
   "main": "background.js",
   "scripts": {
+    "build": "npm run copy && webpack",
+    "copy": "copy *.css build && copy *.html build && copy manifest.json build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/chrome": "^0.1.12"
+    "@types/chrome": "^0.1.12",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
   }
 }

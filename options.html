@@ -2,19 +2,58 @@
 <html>
   <head>
     <title>Keyboard Sounds Settings</title>
+    <link rel="stylesheet" href="options.css" type="text/css"/>
   </head>
   <body>
     <h2>Choose Your Typing Sound</h2>
 
-    <select id="soundPicker"></select>
-    <br /><br />
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+      <div style="display: flex; flex-direction: column;">
+        <label>Upload Custom Sound (MP3/WAV):</label>
+        <input type="file" id="upload" accept="audio/mp3,audio/wav" multiple/>
+      </div>
+      <button id="clear">Clear All Custom Sounds</button>
+    </div>
 
-    <label>Upload Custom Sound (MP3/WAV):</label>
-    <input type="file" id="upload" accept="audio/mp3,audio/wav" />
-    <br /><br />
+    <div>
+      <input name="typing_sound_type" value="single" type="radio" checked>
+        Single Sound
+      </input>
+      <input name="typing_sound_type" value="multiple" type="radio">
+        Multiple Sounds
+      </input>
+    </div>
 
-    <button id="save">Save Preference</button>
-    <button id="clear">Clear All Custom Sounds</button>
+    <div class="container" id="single_sound">
+      <h3>Single Sound</h3>
+      <p>Select a sound to play when you type</p>
+
+      <select id="soundPicker"></select>
+      <br /><br />
+    </div>
+
+    <div class="container hidden" id="multi_sound">
+      <h3>Multiple Sounds</h3>
+      <p>Add the sound you want to play to the list, you can choose to play ordered sound or play sound at random order</p>
+
+      <div>
+        <input name="sound_play_order" value="orderly" type="radio" checked>
+          Play in Order
+        </input>
+        <input name="sound_play_order" value="randomly" type="radio">
+          Play at Random
+        </input>
+      </div>
+      
+      <div id="sound_selections">
+      </div>
+
+      <h3>Sound List</h3>
+      <ol id="sound_list">
+        
+      </ol>
+      <button id="clear_sound_list">clear list</button>
+    </div>
 
     <script src="options.js"></script>
   </body>
